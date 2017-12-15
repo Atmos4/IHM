@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         bottomNavigation = (BottomNavigationView)findViewById(R.id.navigation);
-        bottomNavigation.inflateMenu(R.menu.navigation);
         fragmentManager = getSupportFragmentManager();
         bottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -32,15 +31,15 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.navigation_challenge:
                         fragment = new ChallengeFragment();
                         break;
-                    case R.id.navigation_home:
-                        fragment = new HomeFragment();
-                        break;
                     case R.id.navigation_stats:
                         fragment = new StatsFragment();
                         break;
+                    default:
+                        fragment = new HomeFragment();
+                        break;
                 }
                 final FragmentTransaction transaction = fragmentManager.beginTransaction();
-                transaction.replace(R.id.container, fragment).commit();
+                transaction.replace(R.id.main_content, fragment).commit();
                 return true;
             }
         });

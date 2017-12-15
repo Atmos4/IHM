@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">IHM</string>
-    <string name="title_home">Home</string>
-    <string name="title_challenge">Dashboard</string>
-    <string name="title_stats">Notifications</string>
+    <string name="app_name">Fish &amp; Tips</string>
+    <string name="title_home">Accueil</string>
+    <string name="title_challenge">Défis</string>
+    <string name="title_stats">Statistiques</string>
 </resources>
