@@ -23,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         bottomNavigation = (BottomNavigationView)findViewById(R.id.navigation);
         fragmentManager = getSupportFragmentManager();
+        bottomNavigation.setSelectedItemId(R.id.navigation_home);
+        fragment = new HomeFragment();
+        final FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.replace(R.id.main_content, fragment).commit();
         bottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
