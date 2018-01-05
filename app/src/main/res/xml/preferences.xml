@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference
+        android:key="pref_notif"
+        android:title="@string/title_pref_notif"
+        android:defaultValue="false"/>
+
+    <PreferenceScreen
+        android:key="pref_language"
+        android:title="@string/title_pref_language"
+        android:persistent="false">
+
+        <Preference
+            android:key="pref_lang_french"
+            android:title="@string/title_pref_lang_fr"/>
+
+        <Preference
+            android:key="pref_lang_english"
+            android:title="@string/title_pref_lang_en"/>
+    </PreferenceScreen>
+
+    <CheckBoxPreference
+        android:key="pref_confident"
+        android:title="@string/title_pref_conf"
+        android:defaultValue="true"/>
+
+</PreferenceScreen>

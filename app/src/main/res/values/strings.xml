@@ -1,7 +1,16 @@
 <resources>
     <string name="app_name">Fish &amp; Tips</string>
+
     <string name="title_home">Accueil</string>
     <string name="title_challenge">Défis</string>
     <string name="title_stats">Statistiques</string>
+
     <string name="action_settings">Paramètres</string>
+
+
+    <string name="title_pref_notif">Activer les notifications</string>
+    <string name="title_pref_language">Langue</string>
+    <string name="title_pref_lang_fr">Français</string>
+    <string name="title_pref_lang_en">English</string>
+    <string name="title_pref_conf">Autoriser l\'application à partager vos données</string>
 </resources>
