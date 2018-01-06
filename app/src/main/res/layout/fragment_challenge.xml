@@ -1,12 +1,208 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="fr.insalyon.hexarem.ihm.ChallengeFragment">
-    <TextView
-        android:layout_width="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/title_challenge"
-        android:textStyle="bold"
-        android:layout_gravity="center"/>
-</FrameLayout>
+        android:layout_margin="5dp"
+
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="2dp"
+        app:cardElevation="2dp">
+
+        <!-- Les CardView possèdent des attributs supplémentaires dont
+         - cardBackgroundColor
+         - cardElevation pour l'élévation (donc aussi l'ombre)
+         - cardCornerRadius pour arrondir les angles
+     -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Les CardView agissent comme des FrameLayout,
+         pour avoir une organisation verticale nous devons
+         donc rajouter un LinearLayout -->
+            <TextView
+                android:id="@+id/someilTitre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/sommeil"
+                android:fontFamily="sans-serif"
+                android:padding="20dp"
+                android:textColor="#FFFF"
+                android:textSize="18sp"
+                tools:text="Sommeil" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/someilImg"
+                    android:layout_width="157dp"
+                    android:layout_height="203dp"
+                    android:scaleType="center"
+                    tools:src="@drawable/someil" />
+
+                <TextView
+                    android:id="@+id/someilTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:fontFamily="Roboto"
+                    android:textStyle="bold"
+                    android:textColor="#333"
+                    android:textSize="24sp"
+                    tools:text="Dormez à 22:00 aujourd'hui !" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.CardView
+
+            android:layout_width="185dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="2dp">
+
+            <!-- Les CardView possèdent des attributs supplémentaires dont
+                 - cardBackgroundColor
+                 - cardElevation pour l'élévation (donc aussi l'ombre)
+                 - cardCornerRadius pour arrondir les angles
+             -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!-- Les CardView agissent comme des FrameLayout,
+                 pour avoir une organisation verticale nous devons
+                 donc rajouter un LinearLayout -->
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="210dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/sportTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:fontFamily="Roboto"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:textColor="#333"
+                        android:textSize="18sp"
+                        tools:text="Il fait beau ! déplacez vous en vélo !" />
+
+                    <ImageView
+                        android:id="@+id/sportImg"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:scaleType="fitCenter"
+                        tools:src="@drawable/sport" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/sportTitre"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#2D9CDB"
+                    android:fontFamily="sans-serif"
+                    android:padding="20dp"
+                    android:textColor="#FFFF"
+                    android:textSize="18sp"
+                    tools:text="Sport" />
+
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="2dp"
+            app:cardElevation="2dp">
+
+            <!-- Les CardView possèdent des attributs supplémentaires dont
+                 - cardBackgroundColor
+                 - cardElevation pour l'élévation (donc aussi l'ombre)
+                 - cardCornerRadius pour arrondir les angles
+             -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!-- Les CardView agissent comme des FrameLayout,
+                 pour avoir une organisation verticale nous devons
+                 donc rajouter un LinearLayout -->
+                <TextView
+                    android:id="@+id/nutritionTitre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#C41B26"
+                    android:fontFamily="sans-serif"
+                    android:padding="20dp"
+                    android:textColor="#FFFF"
+                    android:textSize="18sp"
+                    tools:text="Nutrition" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/nutritionImg"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:scaleType="fitCenter"
+                        tools:src="@drawable/pomme" />
+
+                    <TextView
+                        android:id="@+id/nutritionTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="Roboto"
+                        android:gravity="center"
+                        android:textColor="#333"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:text="Mangez deux fruits rouges !" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+</LinearLayout>
