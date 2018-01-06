@@ -38,7 +38,7 @@
                 android:padding="20dp"
                 android:textColor="#FFFF"
                 android:textSize="18sp"
-                tools:text="Sommeil" />
+                android:text="Sommeil" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -50,7 +50,7 @@
                     android:layout_width="157dp"
                     android:layout_height="203dp"
                     android:scaleType="center"
-                    tools:src="@drawable/someil" />
+                    android:src="@drawable/someil" />
 
                 <TextView
                     android:id="@+id/someilTxt"
@@ -61,7 +61,7 @@
                     android:textStyle="bold"
                     android:textColor="#333"
                     android:textSize="24sp"
-                    tools:text="Dormez à 22:00 aujourd'hui !" />
+                    android:text="Dormez à 22:00 aujourd'hui !" />
             </LinearLayout>
 
 
@@ -78,7 +78,7 @@
         <android.support.v7.widget.CardView
 
             android:layout_width="185dp"
-            android:layout_height="match_parent"
+            android:layout_height="280dp"
             android:layout_margin="5dp"
 
             app:cardBackgroundColor="@android:color/white"
@@ -115,14 +115,14 @@
                         android:textStyle="bold"
                         android:textColor="#333"
                         android:textSize="18sp"
-                        tools:text="Il fait beau ! déplacez vous en vélo !" />
+                        android:text="Il fait beau ! déplacez vous en vélo !" />
 
                     <ImageView
                         android:id="@+id/sportImg"
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:scaleType="fitCenter"
-                        tools:src="@drawable/sport" />
+                        android:src="@drawable/sport" />
                 </LinearLayout>
                 <TextView
                     android:id="@+id/sportTitre"
@@ -133,7 +133,7 @@
                     android:padding="20dp"
                     android:textColor="#FFFF"
                     android:textSize="18sp"
-                    tools:text="Sport" />
+                    android:text="Sport" />
 
             </LinearLayout>
 
@@ -142,7 +142,7 @@
         <android.support.v7.widget.CardView
 
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="280dp"
             android:layout_margin="5dp"
 
             app:cardBackgroundColor="@android:color/white"
@@ -172,7 +172,7 @@
                     android:padding="20dp"
                     android:textColor="#FFFF"
                     android:textSize="18sp"
-                    tools:text="Nutrition" />
+                    android:text="Nutrition" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -184,7 +184,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:scaleType="fitCenter"
-                        tools:src="@drawable/pomme" />
+                        android:src="@drawable/pomme" />
 
                     <TextView
                         android:id="@+id/nutritionTxt"
@@ -195,7 +195,7 @@
                         android:textColor="#333"
                         android:textSize="18sp"
                         android:textStyle="bold"
-                        tools:text="Mangez deux fruits rouges !" />
+                        android:text="Mangez deux fruits rouges !" />
                 </LinearLayout>
 
 
