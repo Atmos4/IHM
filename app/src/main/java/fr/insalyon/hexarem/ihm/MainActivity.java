@@ -122,6 +122,8 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.action_settings:
                 // User chose the "Settings" item, loads the SettingsFragment
+                if (myToolbar.getTitle().equals("Paramètres"))
+                    return true;
                 myToolbar.setTitle(R.string.action_settings);
                 navBarSelectedId =0;
                 fragmentManager.beginTransaction()
