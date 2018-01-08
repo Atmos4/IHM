@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 
 public class FillDataFragment extends Fragment {
     public FillDataFragment() {
-
     }
 
     @Override
