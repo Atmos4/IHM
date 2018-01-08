@@ -93,7 +93,6 @@ public class MainActivity extends AppCompatActivity {
                         break;
                 }
                 //Loading the fragment in the main_content layout
-                fragmentManager.popBackStack();
                 final FragmentTransaction transaction = fragmentManager.beginTransaction();
 
                 //Handling animated transitions
@@ -129,7 +128,6 @@ public class MainActivity extends AppCompatActivity {
                 fragmentManager.beginTransaction()
                         .setCustomAnimations(R.animator.slide_in_top,R.animator.slide_out_bottom,R.animator.slide_in_bottom,R.animator.slide_out_top)
                         .replace(R.id.main_content, new SettingsFragment())
-                        .addToBackStack(null)
                         .commit();
                 return true;
 
@@ -142,5 +140,8 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+
+
+
 
 }
