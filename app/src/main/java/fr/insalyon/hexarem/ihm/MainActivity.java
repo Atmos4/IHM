@@ -4,9 +4,11 @@ package fr.insalyon.hexarem.ihm;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -69,6 +71,8 @@ public class MainActivity extends AppCompatActivity {
                 if (navBarSelectedId == item.getItemId())
                     return true;
 
+                getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+
                 navBarSelectedId = item.getItemId();
                 boolean slideRight = false;
 
@@ -123,11 +127,21 @@ public class MainActivity extends AppCompatActivity {
                 // User chose the "Settings" item, loads the SettingsFragment
                 if (myToolbar.getTitle().equals("Paramètres"))
                     return true;
+                getSupportActionBar().setDisplayHomeAsUpEnabled(true);
                 myToolbar.setTitle(R.string.action_settings);
                 navBarSelectedId =0;
                 fragmentManager.beginTransaction()
                         .setCustomAnimations(R.animator.slide_in_top,R.animator.slide_out_bottom,R.animator.slide_in_bottom,R.animator.slide_out_top)
                         .replace(R.id.main_content, new SettingsFragment())
+                        .commit();
+                return true;
+
+            case android.R.id.home:
+                getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+                myToolbar.setTitle(R.string.title_home);
+                fragmentManager.beginTransaction()
+                        .setCustomAnimations(R.animator.slide_in_bottom, R.animator.slide_out_top)
+                        .replace(R.id.main_content, new HomeFragment())
                         .commit();
                 return true;
 
@@ -142,6 +156,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(this)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setTitle("Quitter l'application")
+                .setMessage("Vous partez si vite ?")
+                .setPositiveButton("Hélas oui", new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
 
-
+                })
+                .setNegativeButton("Non, bien sûr", null)
+                .show();
+    }
 }
