@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="fr.insalyon.hexarem.ihm.ChallengeFragment">
+    tools:context="fr.insalyon.hexarem.ihm.ChallengeFragment"
+    >
 
     <android.support.design.widget.TabLayout
         android:id="@+id/tabs"

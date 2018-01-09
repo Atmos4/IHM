@@ -4,15 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="fr.insalyon.hexarem.ihm.ChalOverviewFragment">
+    tools:context="fr.insalyon.hexarem.ihm.ChalOverviewFragment"
+    android:weightSum="100">
 
 
     <android.support.v7.widget.CardView
 
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_margin="5dp"
-
+        android:layout_weight="50"
         app:cardBackgroundColor="@android:color/white"
         app:cardCornerRadius="2dp"
         app:cardElevation="2dp">
@@ -74,15 +75,17 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="50"
+        android:weightSum="100">
 
         <android.support.v7.widget.CardView
 
-            android:layout_width="185dp"
-            android:layout_height="280dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_margin="5dp"
-
+            android:layout_weight="50"
             app:cardBackgroundColor="@android:color/white"
             app:cardCornerRadius="2dp"
             app:cardElevation="2dp">
@@ -143,10 +146,10 @@
         </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
 
-            android:layout_width="match_parent"
-            android:layout_height="280dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_margin="5dp"
-
+            android:layout_weight="50"
             app:cardBackgroundColor="@android:color/white"
             app:cardCornerRadius="2dp"
             app:cardElevation="2dp">
