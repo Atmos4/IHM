@@ -3,10 +3,116 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="fr.insalyon.hexarem.ihm.HomeFragment">
+
+
+    <View
+        android:id="@+id/ellipse"
+        android:layout_width="255.31dp"
+        android:layout_height="93dp"
+        android:layout_marginStart="100.69dp"
+        android:layout_marginTop="55dp"
+        android:background="@drawable/ellipse"
+        android:elevation="4dp" />
+
+    <View
+        android:id="@+id/monprofil"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="233dp"
+        android:background="@drawable/mon_profil" />
+
+    <View
+        android:id="@+id/mesconseils"
+        android:layout_width="73dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="241dp"
+        android:layout_marginTop="390dp"
+        android:background="@drawable/mes_conseils" />
+
+    <View
+        android:id="@+id/lune"
+        android:layout_width="131dp"
+        android:layout_height="128dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="38dp"
+        android:background="@drawable/lune"
+        android:elevation="4dp" />
+
+    <View
+        android:id="@+id/mesdonnees"
+        android:layout_width="86dp"
+        android:layout_height="86dp"
+        android:layout_marginStart="228dp"
+        android:layout_marginTop="233dp"
+        android:background="@drawable/mes_donnees" />
+
+    <View
+        android:id="@+id/croix"
+        android:layout_width="205.5dp"
+        android:layout_height="209.5dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="257.5dp"
+        android:background="@drawable/croix" />
+
+    <View
+        android:id="@+id/mesamis"
+        android:layout_width="108dp"
+        android:layout_height="108dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="378dp"
+        android:background="@drawable/mes_amis" />
+
     <TextView
+        android:id="@+id/editText5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/title_home"
-        android:textStyle="bold"
-        android:layout_gravity="center"/>
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="320dp"
+        android:ems="10"
+        android:singleLine="true"
+        android:text="@string/mon_profil" />
+
+    <TextView
+        android:id="@+id/editText6"
+        android:layout_width="110dp"
+        android:layout_height="82dp"
+        android:layout_marginStart="235dp"
+        android:layout_marginTop="315dp"
+        android:ems="10"
+        android:singleLine="false"
+        android:text="Actualiser \nmes données" />
+
+    <TextView
+        android:id="@+id/editText7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="470dp"
+        android:ems="10"
+        android:text="Mes amis" />
+
+    <TextView
+        android:id="@+id/editText8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="235dp"
+        android:layout_marginTop="470dp"
+        android:ems="10"
+        android:text="Mes conseils" />
+
+    <TextView
+        android:id="@+id/editText9"
+        android:layout_width="173dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="82dp"
+        android:elevation="5dp"
+        android:ems="10"
+        android:text="Choisis un defi !"
+        android:textColor="#FFC107"
+        android:textSize="24sp"
+        android:visibility="visible" />
+
+
 </FrameLayout>
