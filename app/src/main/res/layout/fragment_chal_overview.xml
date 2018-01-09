@@ -16,22 +16,16 @@
         android:layout_weight="50"
         app:cardBackgroundColor="@android:color/white"
         app:cardCornerRadius="2dp"
-        app:cardElevation="2dp">
+        app:cardElevation="10dp">
 
-        <!-- Les CardView possèdent des attributs supplémentaires dont
-         - cardBackgroundColor
-         - cardElevation pour l'élévation (donc aussi l'ombre)
-         - cardCornerRadius pour arrondir les angles
-     -->
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Les CardView agissent comme des FrameLayout,
-         pour avoir une organisation verticale nous devons
-         donc rajouter un LinearLayout -->
+
             <TextView
                 android:id="@+id/someilTitre"
                 android:layout_width="match_parent"
@@ -88,22 +82,16 @@
             android:layout_weight="50"
             app:cardBackgroundColor="@android:color/white"
             app:cardCornerRadius="2dp"
-            app:cardElevation="2dp">
+            app:cardElevation="10dp">
 
-            <!-- Les CardView possèdent des attributs supplémentaires dont
-                 - cardBackgroundColor
-                 - cardElevation pour l'élévation (donc aussi l'ombre)
-                 - cardCornerRadius pour arrondir les angles
-             -->
+
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <!-- Les CardView agissent comme des FrameLayout,
-                 pour avoir une organisation verticale nous devons
-                 donc rajouter un LinearLayout -->
+
 
 
                 <LinearLayout
@@ -132,7 +120,7 @@
                 <TextView
                     android:id="@+id/sportTitre"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:background="#2D9CDB"
                     android:fontFamily="sans-serif"
                     android:padding="20dp"
@@ -152,22 +140,15 @@
             android:layout_weight="50"
             app:cardBackgroundColor="@android:color/white"
             app:cardCornerRadius="2dp"
-            app:cardElevation="2dp">
+            app:cardElevation="10dp">
 
-            <!-- Les CardView possèdent des attributs supplémentaires dont
-                 - cardBackgroundColor
-                 - cardElevation pour l'élévation (donc aussi l'ombre)
-                 - cardCornerRadius pour arrondir les angles
-             -->
+
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <!-- Les CardView agissent comme des FrameLayout,
-                 pour avoir une organisation verticale nous devons
-                 donc rajouter un LinearLayout -->
                 <TextView
                     android:id="@+id/nutritionTitre"
                     android:layout_width="match_parent"
