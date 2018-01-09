@@ -15,7 +15,7 @@
         android:elevation="4dp" />
 
     <ImageButton
-        android:id="@+id/monprofil"
+        android:id="@+id/monprofil_btn"
         style="@style/Widget.AppCompat.ImageButton"
         android:layout_width="85dp"
         android:layout_height="85dp"
@@ -24,7 +24,7 @@
         android:background="@drawable/mon_profil" />
 
     <ImageButton
-        android:id="@+id/mesconseils"
+        android:id="@+id/mesconseils_btn"
         android:layout_width="73dp"
         android:layout_height="71dp"
         android:layout_marginStart="241dp"
@@ -41,7 +41,7 @@
         android:elevation="4dp" />
 
     <ImageButton
-        android:id="@+id/mesdonnees"
+        android:id="@+id/mesdonnees_btn"
         style="@style/Widget.AppCompat.ImageButton"
         android:layout_width="86dp"
         android:layout_height="86dp"
@@ -58,7 +58,7 @@
         android:background="@drawable/croix" />
 
     <ImageButton
-        android:id="@+id/mesamis"
+        android:id="@+id/mesamis_btn"
         style="@style/Widget.AppCompat.ImageButton"
         android:layout_width="108dp"
         android:layout_height="108dp"
