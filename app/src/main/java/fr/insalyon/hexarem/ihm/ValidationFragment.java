@@ -7,17 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * Created by Arnaud on 15/12/2017.
+ * Created by Arnaud on 09/01/2018.
  */
 
-public class StatsFragment extends Fragment {
-    public StatsFragment(){
+public class ValidationFragment extends Fragment {
 
-    }
-
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         //TODO Insert content here
-        return inflater.inflate(R.layout.fragment_stats, container, false);
+        return inflater.inflate(R.layout.fragment_validation, container, false);
     }
 }

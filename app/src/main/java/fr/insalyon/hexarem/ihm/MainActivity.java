@@ -1,13 +1,14 @@
 package fr.insalyon.hexarem.ihm;
 
 
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -21,7 +22,7 @@ import android.view.MenuItem;
  * @see fr.insalyon.hexarem.ihm.StatsFragment
  * @see fr.insalyon.hexarem.ihm.ChallengeFragment
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
     private static final String TAG = MainActivity.class.getSimpleName();
     private int navBarSelectedId =R.id.navigation_home;
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Setting up the fragment that will first be displayed -> HomeFragment
         fragment = new HomeFragment();
-        fragmentManager = getFragmentManager();
+        fragmentManager = getSupportFragmentManager();
         final FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.main_content, fragment).commit();
 
@@ -64,53 +65,7 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigation = findViewById(R.id.navigation);
         bottomNavigation.setSelectedItemId(R.id.navigation_home);
         //Handling clicks on the nav bar
-        bottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-                if (navBarSelectedId == item.getItemId())
-                    return true;
-
-                getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-
-                navBarSelectedId = item.getItemId();
-                boolean slideRight = false;
-
-                switch (navBarSelectedId){
-                    case R.id.navigation_challenge:
-                        fragment = new ChallengeFragment();
-                        if (bottomNavigation.getSelectedItemId()==R.id.navigation_stats)
-                            slideRight = true;
-                        myToolbar.setTitle(R.string.title_challenge);
-                        break;
-                    case R.id.navigation_stats:
-                        fragment = new StatsFragment();
-                        if (bottomNavigation.getSelectedItemId()==R.id.navigation_home)
-                            slideRight = true;
-                        myToolbar.setTitle(R.string.title_stats);
-                        break;
-                    default:
-                        fragment = new HomeFragment();
-                        if (bottomNavigation.getSelectedItemId()==R.id.navigation_challenge)
-                            slideRight = true;
-                        myToolbar.setTitle(R.string.title_home);
-                        break;
-                }
-                //Loading the fragment in the main_content layout
-                final FragmentTransaction transaction = fragmentManager.beginTransaction();
-
-                //Handling animated transitions
-                if (slideRight)
-                    transaction.setCustomAnimations(R.animator.slide_in_right,R.animator.slide_out_left);
-
-                else
-                    transaction.setCustomAnimations(R.animator.slide_in_left,R.animator.slide_out_right);
-
-                transaction.replace(R.id.main_content, fragment)
-                        .commit();
-                return true;
-            }
-        });
+        bottomNavigation.setOnNavigationItemSelectedListener(this);
     }
 
     @Override
@@ -131,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
                 myToolbar.setTitle(R.string.action_settings);
                 navBarSelectedId =0;
                 fragmentManager.beginTransaction()
-                        .setCustomAnimations(R.animator.slide_in_top,R.animator.slide_out_bottom,R.animator.slide_in_bottom,R.animator.slide_out_top)
+                        .setCustomAnimations(R.anim.slide_in_top,R.anim.slide_out_bottom,R.anim.slide_in_bottom,R.anim.slide_out_top)
                         .replace(R.id.main_content, new SettingsFragment())
                         .commit();
                 return true;
@@ -140,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
                 getSupportActionBar().setDisplayHomeAsUpEnabled(false);
                 myToolbar.setTitle(R.string.title_home);
                 fragmentManager.beginTransaction()
-                        .setCustomAnimations(R.animator.slide_in_bottom, R.animator.slide_out_top)
+                        .setCustomAnimations(R.anim.slide_in_bottom, R.anim.slide_out_top,R.anim.slide_in_top,R.anim.slide_out_bottom)
                         .replace(R.id.main_content, new HomeFragment())
                         .commit();
                 return true;
@@ -172,5 +127,38 @@ public class MainActivity extends AppCompatActivity {
                 })
                 .setNegativeButton("Non, bien sûr", null)
                 .show();
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        if (navBarSelectedId == item.getItemId())
+            return true;
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+
+        navBarSelectedId = item.getItemId();
+        boolean slideRight = false;
+
+        switch (navBarSelectedId){
+            case R.id.navigation_challenge:
+                fragment = new ChallengeFragment();
+                myToolbar.setTitle(R.string.title_challenge);
+                break;
+            case R.id.navigation_stats:
+                fragment = new StatsFragment();
+                myToolbar.setTitle(R.string.title_stats);
+                break;
+            default:
+                fragment = new HomeFragment();
+                myToolbar.setTitle(R.string.title_home);
+                break;
+        }
+        //Loading the fragment in the main_content layout
+        fragmentManager.beginTransaction()
+                .setCustomAnimations(android.R.anim.fade_in,android.R.anim.fade_out)
+                .replace(R.id.main_content, fragment)
+                .commit();
+        return true;
     }
 }

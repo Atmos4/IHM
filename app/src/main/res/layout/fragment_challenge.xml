@@ -3,206 +3,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="fr.insalyon.hexarem.ihm.ChallengeFragment">
 
-    <android.support.v7.widget.CardView
-
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabs"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_height="wrap_content">
 
-        app:cardBackgroundColor="@android:color/white"
-        app:cardCornerRadius="2dp"
-        app:cardElevation="2dp">
-
-        <!-- Les CardView possèdent des attributs supplémentaires dont
-         - cardBackgroundColor
-         - cardElevation pour l'élévation (donc aussi l'ombre)
-         - cardCornerRadius pour arrondir les angles
-     -->
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <android.support.design.widget.TabItem
+            android:id="@+id/tabItem"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:text="Mes défis" />
 
-            <!-- Les CardView agissent comme des FrameLayout,
-         pour avoir une organisation verticale nous devons
-         donc rajouter un LinearLayout -->
-            <TextView
-                android:id="@+id/someilTitre"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/sommeil"
-                android:fontFamily="sans-serif"
-                android:padding="20dp"
-                android:textColor="#FFFF"
-                android:textSize="18sp"
-                android:text="Sommeil" />
+        <android.support.design.widget.TabItem
+            android:id="@+id/tabItem2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Validation" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+    </android.support.design.widget.TabLayout>
 
-                <ImageView
-                    android:id="@+id/someilImg"
-                    android:layout_width="157dp"
-                    android:layout_height="203dp"
-                    android:scaleType="center"
-                    android:src="@drawable/someil" />
-
-                <TextView
-                    android:id="@+id/someilTxt"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:fontFamily="Roboto"
-                    android:textStyle="bold"
-                    android:textColor="#333"
-                    android:textSize="24sp"
-                    android:text="Dormez à 22:00 aujourd'hui !" />
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-
-    </android.support.v7.widget.CardView>
-
-    <LinearLayout
+    <fr.insalyon.hexarem.ihm.VerticalScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_height="match_parent">
 
-        <android.support.v7.widget.CardView
-
-            android:layout_width="185dp"
-            android:layout_height="280dp"
-            android:layout_margin="5dp"
-
-            app:cardBackgroundColor="@android:color/white"
-            app:cardCornerRadius="2dp"
-            app:cardElevation="2dp">
-
-            <!-- Les CardView possèdent des attributs supplémentaires dont
-                 - cardBackgroundColor
-                 - cardElevation pour l'élévation (donc aussi l'ombre)
-                 - cardCornerRadius pour arrondir les angles
-             -->
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <!-- Les CardView agissent comme des FrameLayout,
-                 pour avoir une organisation verticale nous devons
-                 donc rajouter un LinearLayout -->
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="210dp"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/sportTxt"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:fontFamily="Roboto"
-                        android:gravity="center"
-                        android:textStyle="bold"
-                        android:textColor="#333"
-                        android:textSize="18sp"
-                        android:text="Il fait beau ! déplacez vous en vélo !" />
-
-                    <ImageView
-                        android:id="@+id/sportImg"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/sport" />
-                </LinearLayout>
-                <TextView
-                    android:id="@+id/sportTitre"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#2D9CDB"
-                    android:fontFamily="sans-serif"
-                    android:padding="20dp"
-                    android:textColor="#FFFF"
-                    android:textSize="18sp"
-                    android:text="Sport" />
-
-            </LinearLayout>
-
-
-        </android.support.v7.widget.CardView>
-        <android.support.v7.widget.CardView
-
+        <fr.insalyon.hexarem.ihm.WrapContentHeightViewPager
+            android:id="@+id/container"
             android:layout_width="match_parent"
-            android:layout_height="280dp"
-            android:layout_margin="5dp"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
-            app:cardBackgroundColor="@android:color/white"
-            app:cardCornerRadius="2dp"
-            app:cardElevation="2dp">
-
-            <!-- Les CardView possèdent des attributs supplémentaires dont
-                 - cardBackgroundColor
-                 - cardElevation pour l'élévation (donc aussi l'ombre)
-                 - cardCornerRadius pour arrondir les angles
-             -->
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <!-- Les CardView agissent comme des FrameLayout,
-                 pour avoir une organisation verticale nous devons
-                 donc rajouter un LinearLayout -->
-                <TextView
-                    android:id="@+id/nutritionTitre"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#C41B26"
-                    android:fontFamily="sans-serif"
-                    android:padding="20dp"
-                    android:textColor="#FFFF"
-                    android:textSize="18sp"
-                    android:text="Nutrition" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/nutritionImg"
-                        android:layout_width="match_parent"
-                        android:layout_height="100dp"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/pomme" />
-
-                    <TextView
-                        android:id="@+id/nutritionTxt"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:fontFamily="Roboto"
-                        android:gravity="center"
-                        android:textColor="#333"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:text="Mangez deux fruits rouges !" />
-                </LinearLayout>
+    </fr.insalyon.hexarem.ihm.VerticalScrollView>
 
 
-            </LinearLayout>
-
-
-        </android.support.v7.widget.CardView>
-
-    </LinearLayout>
 </LinearLayout>
